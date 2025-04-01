@@ -78,8 +78,14 @@ fun main(){
 }
 
 fun testCheckIpFunction(test:String, result:Boolean, correctResult:Boolean){
+    // variables red,green are have cmd colors values for text formating
+    val red = "\u001B[31m"
+    val green = "\u001B[32m"
+    // to rest cmd color to default color
+    val reset = "\u001B[0m"
+
     if (result == correctResult)
-        println("Success - $test $result")
+        println("$green Success - $test $result $reset")
     else
-        println("Failed - $test $result")
+        println("$red Failed - $test $result $reset")
 }
