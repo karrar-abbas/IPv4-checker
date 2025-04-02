@@ -8,12 +8,13 @@ fun checkIp(ip:String): Boolean {
 
         return ipSegments.size ==4
                 && ipSegments
-                    .all{
-                        it.all{ it.isDigit() }
-                         && it.toInt() in 0..255
-                         && !(it.length >1 && it.startsWith("0"))
+                    .all{segment ->
+                        segment.all{item -> item.isDigit() }
+                         && segment.toInt() in 0..255
+                         && !(segment.length >1 && segment.startsWith("0"))
                     }
 }
+
 
 
 
