@@ -22,7 +22,10 @@ fun main(){
     testCheckIpFunction(test = "Test 13 - should fail when negative number. ip: 37.238.-150.40", result = checkIp("37.238.-150.40"), correctResult = false)
     testCheckIpFunction(test = "Test 14 - should fail when more than four segments. ip: 22.180.0.70.120", result = checkIp("22.180.0.70.120"), correctResult = false)
     testCheckIpFunction(test = "Test 15 - should fail when leading zeros. ip: 75.100.230.000", result = checkIp("75.100.230.000"), correctResult = false)
-    // endregion
+    testCheckIpFunction(test = "Test 16 - should fail when leading zeros. ip: 192. .168.0.1", result = checkIp("192. .168.0.1"), correctResult = false)
+    testCheckIpFunction(test = "Test 17 - should fail when leading zeros. ip: .192.168.0.1", result = checkIp(".192.168.0.1"), correctResult = false)
+
+// endregion
 }
 
 fun testCheckIpFunction(test:String, result:Boolean, correctResult:Boolean){
